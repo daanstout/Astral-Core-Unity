@@ -1,15 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 
 using UnityEngine;
 
 namespace Core {
+    /// <summary>
+    /// A layer of states and links in the state machine.
+    /// </summary>
     [CreateAssetMenu(menuName = "State Machine/State Machine Layer")]
     [Serializable]
     public class StateMachineLayer : ScriptableObject {
         [Serializable]
         public class StateData {
+            public string Identifier => identifier;
+
             public string Name {
                 get => name;
                 set => name = value;
@@ -24,10 +27,15 @@ namespace Core {
 
             public string[] Links => links;
 
+            [SerializeField] private string identifier;
             [SerializeField] private string name;
             [SerializeField] private Vector2Int position;
             [SerializeField] private ActionData[] actions = Array.Empty<ActionData>();
             [SerializeField] private string[] links = Array.Empty<string>();
+
+            public StateData(string identifier) {
+                this.identifier = identifier;
+            }
         }
 
         [Serializable]
@@ -48,18 +56,25 @@ namespace Core {
 
         [Serializable]
         public class LinkData {
-            public string SourceState {
+            public Guid Identifier => identifier;
+
+            public Guid SourceState {
                 get => sourceState;
                 set => sourceState = value;
             }
 
-            public string DestinationState {
+            public Guid DestinationState {
                 get => destinationState;
                 set => destinationState = value;
             }
 
-            [SerializeField] private string sourceState;
-            [SerializeField] private string destinationState;
+            [SerializeField] private Guid identifier;
+            [SerializeField] private Guid sourceState;
+            [SerializeField] private Guid destinationState;
+
+            public LinkData(Guid identifier) {
+                this.identifier = identifier;
+            }
         }
 
         public StateData[] States => states;
@@ -69,7 +84,7 @@ namespace Core {
         [SerializeField] private LinkData[] links = Array.Empty<LinkData>();
 
         public StateData AddNewState() {
-            var state = new StateData {
+            var state = new StateData(Guid.NewGuid().ToString()) {
                 Name = $"State {states.Length + 1}"
             };
 

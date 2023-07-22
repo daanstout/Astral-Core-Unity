@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Core.Editor.Elements {
+    /// <summary>
+    /// Base class for building a visual element container.
+    /// </summary>
     public abstract class Element {
         protected readonly IStateMachineData stateMachineData;
 
@@ -11,11 +12,23 @@ namespace Core.Editor.Elements {
             this.stateMachineData = stateMachineData;
         }
 
+        /// <summary>
+        /// Rebuilds the element and its child elements.
+        /// <para>This function breaks down and rebuilds from the ground up when called.</para>
+        /// </summary>
+        /// <returns>Returns its <see cref="VisualElement"/> to show.</returns>
         public abstract VisualElement Rebuild();
 
+        /// <summary>
+        /// Applies a <see cref="Manipulator"/> on the <see cref="VisualElement"/>.
+        /// </summary>
+        /// <param name="manipulator">The <see cref="Manipulator"/> to apply.</param>
         public abstract void ApplyManipulator(Manipulator manipulator);
     }
 
+    /// <summary>
+    /// Base class for building a visual element container.
+    /// </summary>
     public abstract class Element<T> : Element
         where T : VisualElement, new()
     {
@@ -27,16 +40,22 @@ namespace Core.Editor.Elements {
             };
         }
 
+        /// <inheritdoc/>
         public override VisualElement Rebuild() {
             targetElement.Clear();
 
             return targetElement;
         }
 
+        /// <inheritdoc/>
         public override void ApplyManipulator(Manipulator manipulator) {
             manipulator.target = targetElement;
         }
 
+        /// <summary>
+        /// Translates the element based on its <see cref="VisualElement.transform"/>.
+        /// </summary>
+        /// <param name="translation">How much to move it.</param>
         public void TranslateElement(Vector3 translation) {
             targetElement.transform.position += translation;
         }

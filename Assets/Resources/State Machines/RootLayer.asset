@@ -13,16 +13,9 @@ MonoBehaviour:
   m_Name: RootLayer
   m_EditorClassIdentifier: 
   states:
-  - name: State 1
-    position: {x: 295, y: 256}
-    actions: []
-    links: []
-  - name: State 2
-    position: {x: 108, y: 217}
-    actions: []
-    links: []
-  - name: State 3
-    position: {x: 33, y: 46}
+  - identifier: 9981e147-ee8d-489c-ab76-5b83da2483a7
+    name: State 1
+    position: {x: 0, y: 0}
     actions: []
     links: []
   links: []

@@ -1,12 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 
 using UnityEditor;
 
-using UnityEngine;
-
-namespace Core.Editor.Elements
-{
+namespace Core.Editor.Elements {
     public class StateMachineData : IStateMachineData {
         public StateMachineLayer CurrentLayer { get; set; }
 

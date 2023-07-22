@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -34,6 +33,7 @@ namespace Core.Editor.Elements {
                 };
                 stateElements.Add(stateData);
                 targetElement.Add(stateElement.Rebuild());
+                stateElement.TranslateElement(viewportOffset);
             }
 
             return targetElement;
