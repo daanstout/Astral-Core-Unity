@@ -26,6 +26,7 @@ namespace Core.Editor.Elements {
             targetElement.style.marginLeft = 10;
             targetElement.style.flexDirection = FlexDirection.Column;
             targetElement.style.display = DisplayStyle.Flex;
+            targetElement.style.overflow = Overflow.Hidden;
 
             targetElement.Add(topLayer.Rebuild());
             targetElement.Add(viewport.Rebuild());
