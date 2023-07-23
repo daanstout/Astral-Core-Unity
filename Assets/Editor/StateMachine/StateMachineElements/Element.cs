@@ -48,7 +48,7 @@ namespace Core.Editor.Elements {
         }
 
         /// <inheritdoc/>
-        public override void ApplyManipulator(IManipulator manipulator) {
+        public override sealed void ApplyManipulator(IManipulator manipulator) {
             targetElement.AddManipulator(manipulator);
         }
 

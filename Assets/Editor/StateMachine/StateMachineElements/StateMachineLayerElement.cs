@@ -15,8 +15,8 @@ namespace Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
-            targetElement.style.width = 800;
-            targetElement.style.height = 500;
+            targetElement.style.width = 600;
+            targetElement.style.height = 400;
             targetElement.style.marginLeft = 10;
             targetElement.style.flexDirection = FlexDirection.Column;
             targetElement.style.display = DisplayStyle.Flex;

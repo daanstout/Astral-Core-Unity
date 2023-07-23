@@ -15,7 +15,12 @@ MonoBehaviour:
   states:
   - identifier: 9981e147-ee8d-489c-ab76-5b83da2483a7
     name: State 1
-    position: {x: 0, y: 0}
+    position: {x: 163, y: 136}
+    actions: []
+    links: []
+  - identifier: f83f95ca-a533-4304-b850-f38d57b82933
+    name: State 2
+    position: {x: 82, y: 69}
     actions: []
     links: []
   links: []
