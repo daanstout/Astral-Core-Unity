@@ -12,9 +12,16 @@ namespace Core.Editor.Elements {
         }
 
         private readonly List<StateData> stateElements = new List<StateData>();
+        private readonly ViewportBackground viewportBackground;
+        private readonly ViewportDragger viewportDragger;
         private Vector3 viewportOffset = Vector3.zero;
 
-        public StateMachineLayerViewportElement(IStateMachineData stateMachineData) : base(stateMachineData) { }
+        public StateMachineLayerViewportElement(IStateMachineData stateMachineData) : base(stateMachineData) {
+            viewportBackground = new ViewportBackground(stateMachineData);
+            viewportDragger = new ViewportDragger(viewportBackground);
+
+            viewportBackground.OnDragged += OnViewportDragged;
+        }
 
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
@@ -22,6 +29,9 @@ namespace Core.Editor.Elements {
             targetElement.style.width = 750;
             targetElement.style.height = 400;
             targetElement.style.alignContent = Align.FlexStart;
+            targetElement.style.overflow = Overflow.Hidden;
+
+            targetElement.Add(viewportBackground.Rebuild());
 
             stateElements.Clear();
 
@@ -39,7 +49,7 @@ namespace Core.Editor.Elements {
             return targetElement;
         }
 
-        public void ApplyDeltaOffset(Vector3 offset) {
+        private void OnViewportDragged(Vector3 offset) {
             viewportOffset += offset;
 
             foreach(var state in stateElements) {

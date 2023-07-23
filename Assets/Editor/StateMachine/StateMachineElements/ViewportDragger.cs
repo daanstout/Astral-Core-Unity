@@ -1,9 +1,9 @@
 using UnityEngine.UIElements;
 
 namespace Core.Editor.Elements {
-    public class ViewportDragger : DraggerBase<StateMachineLayerViewportElement> {
+    public class ViewportDragger : DraggerBase<ViewportBackground> {
 
-        public ViewportDragger(StateMachineLayerViewportElement stateMachineLayerViewportElement) : base(stateMachineLayerViewportElement) { }
+        public ViewportDragger(ViewportBackground stateMachineLayerViewportElement) : base(stateMachineLayerViewportElement) { }
 
         protected override void OnPointerMove(PointerMoveEvent args) {
             element.ApplyDeltaOffset(PointerFrameDelta);

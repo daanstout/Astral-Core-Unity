@@ -20,10 +20,10 @@ namespace Core.Editor.Elements {
         public abstract VisualElement Rebuild();
 
         /// <summary>
-        /// Applies a <see cref="Manipulator"/> on the <see cref="VisualElement"/>.
+        /// Applies a <see cref="IManipulator"/> on the <see cref="VisualElement"/>.
         /// </summary>
-        /// <param name="manipulator">The <see cref="Manipulator"/> to apply.</param>
-        public abstract void ApplyManipulator(Manipulator manipulator);
+        /// <param name="manipulator">The <see cref="IManipulator"/> to apply.</param>
+        public abstract void ApplyManipulator(IManipulator manipulator);
     }
 
     /// <summary>
@@ -48,8 +48,8 @@ namespace Core.Editor.Elements {
         }
 
         /// <inheritdoc/>
-        public override void ApplyManipulator(Manipulator manipulator) {
-            manipulator.target = targetElement;
+        public override void ApplyManipulator(IManipulator manipulator) {
+            targetElement.AddManipulator(manipulator);
         }
 
         /// <summary>

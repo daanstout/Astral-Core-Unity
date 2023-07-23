@@ -4,14 +4,12 @@ namespace Core.Editor.Elements {
     public class StateMachineLayerElement : Element<VisualElement> {
         private readonly StateMachineLayerTopElement topLayer;
         private readonly StateMachineLayerViewportElement viewport;
-        private readonly ViewportDragger viewportDragger;
 
         public StateMachineLayerElement(IStateMachineData stateMachineData) : base(stateMachineData) {
             topLayer = new StateMachineLayerTopElement(stateMachineData);
             topLayer.OnStateAdded += OnStateAddedEvent;
 
             viewport = new StateMachineLayerViewportElement(stateMachineData);
-            viewportDragger = new ViewportDragger(viewport);
         }
 
         public override VisualElement Rebuild() {
