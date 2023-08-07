@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     /// <summary>
     /// Allows for dragging of <see cref="StateObjectElement"/> within the state machine.
     /// </summary>

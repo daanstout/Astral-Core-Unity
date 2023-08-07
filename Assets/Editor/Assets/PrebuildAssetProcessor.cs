@@ -6,7 +6,7 @@ using UnityEditor.Build.Reporting;
 
 using UnityEngine;
 
-namespace Core.Editor
+namespace Astral.Core.Editor
 {
     public class PrebuildAssetCollector : IPreprocessBuildWithReport, IPostprocessBuildWithReport {
         public int callbackOrder => 1;

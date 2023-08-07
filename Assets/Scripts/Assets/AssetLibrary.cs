@@ -5,7 +5,7 @@ using UnityEditor;
 
 using UnityEngine;
 
-namespace Core
+namespace Astral.Core
 {
     public static class AssetLibrary
     {
@@ -15,10 +15,10 @@ namespace Core
 
         //private const string  
 
-        public static Object GuidToObject(string guid) {
-            //var objectPath = AssetDatabase.GUIDToAssetPath(guid);
+        //public static Object GuidToObject(string guid) {
+        //    //var objectPath = AssetDatabase.GUIDToAssetPath(guid);
 
-            return null;
-        }
+        //    return null;
+        //}
     }
 }

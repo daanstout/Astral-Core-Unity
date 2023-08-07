@@ -2,7 +2,7 @@ using UnityEditor;
 
 using UnityEngine;
 
-namespace Core.Editor {
+namespace Astral.Core.Editor {
     [CreateAssetMenu(menuName = "Scriptable Objects/State Machine Drawer Data")]
     public class StateMachineWindowPersistentData : ScriptableObject
     {

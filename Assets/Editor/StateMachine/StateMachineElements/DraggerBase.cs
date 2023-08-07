@@ -1,9 +1,9 @@
-using Core.Editor.Elements;
+using Astral.Core.Editor.Elements;
 
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Core.Editor {
+namespace Astral.Core.Editor {
     /// <summary>
     /// Allows for dragging an <see cref="Element"/>.
     /// </summary>

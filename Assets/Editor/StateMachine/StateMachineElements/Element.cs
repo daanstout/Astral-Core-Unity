@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     /// <summary>
     /// Base class for building a visual element container.
     /// </summary>
@@ -58,6 +58,14 @@ namespace Core.Editor.Elements {
         /// <param name="translation">How much to move it.</param>
         public void TranslateElement(Vector3 translation) {
             targetElement.transform.position += translation;
+        }
+
+        protected void RegisterCallback<TEventType>(EventCallback<TEventType> callback) where TEventType : EventBase<TEventType>, new() {
+            targetElement.RegisterCallback(callback);
+        }
+
+        protected void UnregisterCallback<TEventType>(EventCallback<TEventType> callback) where TEventType : EventBase<TEventType>, new() {
+            targetElement.UnregisterCallback(callback);
         }
     }
 }

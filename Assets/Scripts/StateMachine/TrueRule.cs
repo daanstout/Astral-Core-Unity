@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Astral.Core
 {
-    public class GuidResourceAttribute : PropertyAttribute
+    public sealed class TrueRule : Rule
     {
+        public override bool IsTrue => true;
     }
 }

@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using Core;
 
-namespace Core.Editor {
+namespace Astral.Core.Editor {
     [CustomEditor(typeof(StateMachine))]
     public class StateMachineDrawer : UnityEditor.Editor {
         private StateMachine stateMachine;

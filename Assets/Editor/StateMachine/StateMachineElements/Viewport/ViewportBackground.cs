@@ -5,11 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class ViewportBackground : Element<Box> {
         public event Action<Vector3> OnDragged;
 
-        public ViewportBackground(IStateMachineData stateMachineData) : base(stateMachineData) { }
+        private readonly ViewportDragger viewportDragger;
+
+        public ViewportBackground(IStateMachineData stateMachineData) : base(stateMachineData) {
+            viewportDragger = new ViewportDragger(this);
+        }
 
         public void ApplyDeltaOffset(Vector3 offset) {
             OnDragged?.Invoke(offset);

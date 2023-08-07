@@ -1,12 +1,8 @@
 {
-    "name": "Core.Editor",
-    "rootNamespace": "Core.Editor",
-    "references": [
-        "GUID:a7cf06c52a5a6c94baa8658556265cad"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "Astral.Core",
+    "rootNamespace": "Astral.Core",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

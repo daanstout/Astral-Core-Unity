@@ -1,6 +1,6 @@
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class HierarchyViewElement : Element<Box> {
         public HierarchyViewElement(IStateMachineData stateMachineData) : base(stateMachineData) { }
 

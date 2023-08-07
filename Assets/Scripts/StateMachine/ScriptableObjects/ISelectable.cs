@@ -4,7 +4,10 @@ using UnityEngine;
 
 namespace Astral.Core
 {
-    public class GuidResourceAttribute : PropertyAttribute
+    public interface ISelectable
     {
+        string Type { get; }
+
+        string SubType { get; }
     }
 }

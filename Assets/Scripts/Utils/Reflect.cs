@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 using UnityEngine;
 
-namespace Core {
+namespace Astral.Core {
     public static class Reflect {
         private struct TypeAttributeInfo : IEquatable<TypeAttributeInfo> {
             public Type Type { get; set; }

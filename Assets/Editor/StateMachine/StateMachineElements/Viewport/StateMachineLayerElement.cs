@@ -1,6 +1,6 @@
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class StateMachineLayerElement : Element<VisualElement> {
         private readonly StateMachineLayerTopElement topLayer;
         private readonly StateMachineLayerViewportElement viewport;

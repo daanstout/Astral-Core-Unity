@@ -1,6 +1,6 @@
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class ViewportDragger : DraggerBase<ViewportBackground> {
 
         public ViewportDragger(ViewportBackground stateMachineLayerViewportElement) : base(stateMachineLayerViewportElement) { }

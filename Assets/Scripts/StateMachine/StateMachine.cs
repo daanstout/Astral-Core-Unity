@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace Core {
+namespace Astral.Core {
     public class StateMachine : MonoBehaviour {
         [SerializeField] private ScriptableObject rootLayer;
 

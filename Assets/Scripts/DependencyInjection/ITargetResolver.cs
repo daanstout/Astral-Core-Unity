@@ -1,4 +1,4 @@
-namespace Core {
+namespace Astral.Core {
     public interface ITargetResolver {
         void BindToInstance(object instance);
         object Resolve(IServiceLocator serviceLocator);

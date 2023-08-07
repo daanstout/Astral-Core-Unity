@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-using Core;
-
-namespace Core {
+namespace Astral.Core {
     public class ServiceLocator : IServiceLocator {
         private readonly Dictionary<Type, ITargetResolver> resolvers = new Dictionary<Type, ITargetResolver>();
 

@@ -7,7 +7,7 @@ using UnityEditor.UIElements;
 using System;
 using System.Diagnostics;
 
-namespace Core.Editor {
+namespace Astral.Core.Editor {
     [CustomPropertyDrawer(typeof(GuidResourceAttribute))]
     public class GuidResourceAttributeDrawer : PropertyDrawer {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Core {
+namespace Astral.Core {
     [AttributeUsage(AttributeTargets.Field)]
     public class DependencyAttribute : Attribute {
         public string Identifier { get; } = null;

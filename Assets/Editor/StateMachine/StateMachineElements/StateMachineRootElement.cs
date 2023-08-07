@@ -1,6 +1,6 @@
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class StateMachineRootElement : Element<VisualElement> {
         private readonly HierarchyViewElement hierarchyView;
         private readonly StateMachineLayerElement stateMachineLayer;
@@ -8,8 +8,8 @@ namespace Core.Editor.Elements {
 
         public StateMachineRootElement(IStateMachineData stateMachineData) : base(stateMachineData) {
             hierarchyView = new HierarchyViewElement(stateMachineData);
-            stateMachineLayer = new StateMachineLayerElement(stateMachineData);
             stateMachineStateInfoDrawer = new StateMachineStateInfoDrawer(stateMachineData);
+            stateMachineLayer = new StateMachineLayerElement(stateMachineData);
         }
 
         public override VisualElement Rebuild() {
@@ -20,10 +20,16 @@ namespace Core.Editor.Elements {
             targetElement.style.paddingLeft = 10;
             targetElement.style.height = 700;
 
-            var splitView = new TwoPaneSplitView(0, 200, TwoPaneSplitViewOrientation.Horizontal);
+            var splitView = new TwoPaneSplitView(0, 200, TwoPaneSplitViewOrientation.Horizontal) {
+                name = "Hierarchy-State Machine Split View"
+            };
             splitView.StretchToParentSize();
-            var leftPane = new Box();
-            var rightPane = new Box();
+            var leftPane = new Box() {
+                name = "Hierarchy Box"
+            };
+            var rightPane = new Box() {
+                name = "State Machine Box"
+            };
             splitView.Add(leftPane);
             splitView.Add(rightPane);
             leftPane.Add(hierarchyView.Rebuild());

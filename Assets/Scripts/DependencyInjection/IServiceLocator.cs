@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+namespace Astral.Core
 {
     public interface IServiceLocator {
         object Get(Type type);

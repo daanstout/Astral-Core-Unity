@@ -2,7 +2,7 @@ using System;
 
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class StateMachineLayerTopElement : Element<VisualElement> {
         public event Action OnStateAdded;
 

@@ -1,21 +1,26 @@
+using System;
+
 using UnityEngine;
 using UnityEngine.UIElements;
 
-using StateData = Core.StateMachineLayer.StateData;
-
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class StateObjectElement : Element<Box> {
-        private readonly StateData stateData;
+        public StateData StateData { get; }
+
+        private readonly StateDragger stateDragger;
 
         public StateObjectElement(IStateMachineData stateMachineData, StateData stateData) : base(stateMachineData) {
-            this.stateData = stateData;
+            this.StateData = stateData;
+            stateDragger = new StateDragger(this);
+
+            RegisterCallback<ClickEvent>(OnStateClickedEvent);
         }
 
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
             targetElement.style.position = Position.Absolute;
-            targetElement.transform.position = new Vector3(stateData.Position.x, stateData.Position.y, 0.0f);
+            targetElement.transform.position = new Vector3(StateData.Position.x, StateData.Position.y, 0.0f);
             targetElement.style.width = 100;
             targetElement.style.height = 100;
 
@@ -25,15 +30,19 @@ namespace Core.Editor.Elements {
 
             targetElement.Add(topLayerBox);
 
-            var nameLabel = new Label(stateData.Name);
+            var nameLabel = new Label(StateData.Name);
             topLayerBox.Add(nameLabel);
 
             return targetElement;
         }
 
         public void SavePosition(Vector2 position) {
-            stateData.Position = new Vector2Int((int)position.x, (int)position.y);
+            StateData.Position = new Vector2Int((int)position.x, (int)position.y);
             stateMachineData.MarkDirty();
+        }
+
+        private void OnStateClickedEvent(ClickEvent args) {
+            stateMachineData.SelectItem(StateData);
         }
     }
 }

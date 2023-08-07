@@ -1,24 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Core.Editor.Elements {
+namespace Astral.Core.Editor.Elements {
     public class StateMachineLayerViewportElement : Element<Box> {
-        private struct StateData {
-            public StateObjectElement StateObjectElement { get; set; }
-
-            public StateDragger StateDragger { get; set; }
-        }
-
-        private readonly List<StateData> stateElements = new List<StateData>();
+        private readonly List<StateObjectElement> stateElements = new List<StateObjectElement>();
         private readonly ViewportBackground viewportBackground;
-        private readonly ViewportDragger viewportDragger;
+        
         private Vector3 viewportOffset = Vector3.zero;
 
         public StateMachineLayerViewportElement(IStateMachineData stateMachineData) : base(stateMachineData) {
             viewportBackground = new ViewportBackground(stateMachineData);
-            viewportDragger = new ViewportDragger(viewportBackground);
 
             viewportBackground.OnDragged += OnViewportDragged;
         }
@@ -37,14 +31,12 @@ namespace Core.Editor.Elements {
 
             foreach (var state in stateMachineData.GetAllStates()) {
                 var stateElement = new StateObjectElement(stateMachineData, state);
-                var stateData = new StateData {
-                    StateObjectElement = stateElement,
-                    StateDragger = new StateDragger(stateElement)
-                };
-                stateElements.Add(stateData);
+                stateElements.Add(stateElement);
                 targetElement.Add(stateElement.Rebuild());
                 stateElement.TranslateElement(viewportOffset);
             }
+
+            stateMachineData.SelectItem(stateElements.FirstOrDefault()?.StateData);
 
             return targetElement;
         }
@@ -53,7 +45,7 @@ namespace Core.Editor.Elements {
             viewportOffset += offset;
 
             foreach(var state in stateElements) {
-                state.StateObjectElement.TranslateElement(offset);
+                state.TranslateElement(offset);
             }
         }
     }

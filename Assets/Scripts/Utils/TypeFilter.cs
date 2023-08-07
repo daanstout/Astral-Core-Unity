@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core {
+namespace Astral.Core {
     [Flags]
     public enum TypeFilter : uint{ 
         None = 0x00,

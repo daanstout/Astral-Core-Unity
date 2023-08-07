@@ -7,9 +7,9 @@ using UnityEngine;
 using UnityEngine.TestTools;
 
 using NSubstitute;
-using Core;
+using Astral.Core;
 
-namespace Core.Test.DependencyInjection {
+namespace Astral.Core.Test.DependencyInjection {
     [TestFixture]
     public class TargetResolverTests {
         private class TestTarget {

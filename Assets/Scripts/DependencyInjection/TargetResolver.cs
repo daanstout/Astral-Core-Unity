@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace Core {
+namespace Astral.Core {
     public class TargetResolver<T> : ITargetResolver<T>
         where T : class, new() {
         public bool IsSingleton { get; set; } = true;
