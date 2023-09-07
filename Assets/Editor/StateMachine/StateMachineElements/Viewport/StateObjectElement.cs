@@ -10,7 +10,7 @@ namespace Astral.Core.Editor.Elements {
         private readonly StateDragger stateDragger;
 
         public StateObjectElement(IStateMachineData stateMachineData, StateData stateData) : base(stateMachineData) {
-            this.StateData = stateData;
+            StateData = stateData;
             stateDragger = new StateDragger(this);
 
             RegisterCallback<ClickEvent>(OnStateClickedEvent);

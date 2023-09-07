@@ -29,7 +29,7 @@ namespace Astral.Core.Editor.Elements {
         }
 
         private void OnNewItemButtonClicked() {
-
+            TypeSearchWindow.CreateWindow();
         }
 
         private void OnNewSelectedItem() {

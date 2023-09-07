@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 namespace Astral.Core.Editor {
     public class StateMachineWindow : EditorWindow {
         private StateMachineWindowPersistentData persistentData;
+        private StyleSheet styleSheet;
 
         private StateMachineRootElement stateMachineDrawer;
 
@@ -23,9 +24,11 @@ namespace Astral.Core.Editor {
 
         public void CreateGUI() {
             persistentData = Resources.Load<StateMachineWindowPersistentData>(nameof(StateMachineWindowPersistentData));
+            styleSheet = StyleSheet.GetStyleSheet($"{nameof(StateMachineWindow)}-StyleSheet");
 
             stateMachineData = new StateMachineData {
-                CurrentLayer = persistentData.PrimaryLayer
+                CurrentLayer = persistentData.PrimaryLayer,
+                StyleSheet = styleSheet
             };
 
             stateMachineDrawer = new StateMachineRootElement(stateMachineData);

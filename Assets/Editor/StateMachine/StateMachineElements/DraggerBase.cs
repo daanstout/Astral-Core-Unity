@@ -1,3 +1,5 @@
+using System;
+
 using Astral.Core.Editor.Elements;
 
 using UnityEngine;
@@ -41,6 +43,10 @@ namespace Astral.Core.Editor {
         protected DraggerBase(T target) {
             element = target;
             target.ApplyManipulator(this);
+        }
+
+        public static TDragger Create<TDragger>(T instance) where TDragger : DraggerBase<T> {
+            return (TDragger)Activator.CreateInstance(typeof(TDragger), instance);
         }
 
         /// <inheritdoc/>

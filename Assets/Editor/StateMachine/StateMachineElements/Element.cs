@@ -30,8 +30,7 @@ namespace Astral.Core.Editor.Elements {
     /// Base class for building a visual element container.
     /// </summary>
     public abstract class Element<T> : Element
-        where T : VisualElement, new()
-    {
+        where T : VisualElement, new() {
         private readonly T targetElement;
 
         protected Element(IStateMachineData stateMachineData) : base(stateMachineData) {
