@@ -34,6 +34,8 @@ namespace Astral.Core.Editor {
             stateMachineDrawer = new StateMachineRootElement(stateMachineData);
 
             Build();
+
+            styleSheet.SheetUpdatedEvent += Build;
         }
 
         private void Build() {

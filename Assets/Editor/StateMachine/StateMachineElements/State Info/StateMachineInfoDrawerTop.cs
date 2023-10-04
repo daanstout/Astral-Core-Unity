@@ -17,11 +17,11 @@ namespace Astral.Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
-            targetElement.style.height = 25;
+            ApplyStyle("StateMachineStateInfoDrawerTop");
 
             OnNewSelectedItem();
 
-            AddItemButton.style.width = 100;
+            stateMachineData.SetStyle("ButtonBase", AddItemButton.style);
 
             targetElement.Add(AddItemButton);
 

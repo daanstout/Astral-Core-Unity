@@ -15,12 +15,7 @@ namespace Astral.Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
-            stateMachineData.SetStyle("RootElement", targetElement.style);
-
-            //targetElement.style.flexDirection = FlexDirection.Row;
-            //targetElement.style.paddingTop = 10;
-            //targetElement.style.paddingLeft = 10;
-            //targetElement.style.height = 700;
+            ApplyStyle("RootElement");
 
             var splitView = new TwoPaneSplitView(0, 200, TwoPaneSplitViewOrientation.Horizontal) {
                 name = "Hierarchy-State Machine Split View"

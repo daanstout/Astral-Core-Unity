@@ -15,12 +15,22 @@ MonoBehaviour:
   states:
   - identifier: 9981e147-ee8d-489c-ab76-5b83da2483a7
     name: State 1
-    position: {x: 192, y: 109}
+    position: {x: 133, y: 127}
     actions: []
     links: []
   - identifier: f83f95ca-a533-4304-b850-f38d57b82933
     name: State 2
-    position: {x: 62, y: 110}
+    position: {x: 374, y: 184}
+    actions: []
+    links: []
+  - identifier: e387a5db-b0f2-4e8a-8e78-f0cbebad72a7
+    name: State 3
+    position: {x: 386, y: 55}
+    actions: []
+    links: []
+  - identifier: c458b84f-948f-49e7-b22d-b195d67e1291
+    name: State 4
+    position: {x: 247, y: 96}
     actions: []
     links: []
   links: []

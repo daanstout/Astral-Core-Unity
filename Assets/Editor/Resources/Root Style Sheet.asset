@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceefcc38350d66a44a70edf28bf5aaf4, type: 3}
+  m_Name: Root Style Sheet
+  m_EditorClassIdentifier: 
+  sheetName: 
+  linkedStyleSheets: []
+  styleEntries:
+  - name: Button
+    overwriteStyle: 0
+    linkedStyle: 
+    flexDirection:
+      enable: 0
+      data: 0
+    displayStyle:
+      enable: 0
+      data: 0
+    overflow:
+      enable: 0
+      data: 0
+    alignContent:
+      enable: 0
+      data: 0
+    alignItems:
+      enable: 0
+      data: 0
+    position:
+      enable: 0
+      data: 0
+    padding:
+      enable: 0
+      unit: 0
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+    margin:
+      enable: 0
+      unit: 0
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+    offset:
+      enable: 1
+      unit: 1
+      top: 12.5
+      left: 0
+      right: 0
+      bottom: 0
+    height:
+      enable: 1
+      data: 25
+      unit: 0
+    width:
+      enable: 1
+      data: 100
+      unit: 0
+    backgroundColor:
+      enable: 0
+      data: {r: 0, g: 0, b: 0, a: 0}
+    mainColor:
+      enable: 0
+      data: {r: 0, g: 0, b: 0, a: 0}
+    borderColor:
+      enable: 0
+      top: {r: 0, g: 0, b: 0, a: 0}
+      left: {r: 0, g: 0, b: 0, a: 0}
+      right: {r: 0, g: 0, b: 0, a: 0}
+      bottom: {r: 0, g: 0, b: 0, a: 0}

@@ -11,13 +11,14 @@ namespace Astral.Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
-            targetElement.style.height = 25;
+            ApplyStyle("StateMachineLayerTop");
 
             var newStateButton = new Button(() => OnStateAdded?.Invoke()) {
                 text = "New State",
                 name = "New State Button"
             };
-            newStateButton.style.width = 100;
+            
+            stateMachineData.SetStyle("DefaultButton", newStateButton.style);
 
             targetElement.Add(newStateButton);
 

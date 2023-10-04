@@ -22,6 +22,8 @@ namespace Astral.Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
+            ApplyStyle("StateMachineLayerViewportBackground");
+
             targetElement.StretchToParentSize();
 
             return targetElement;

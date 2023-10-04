@@ -19,14 +19,11 @@ namespace Astral.Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
-            targetElement.style.position = Position.Absolute;
+            ApplyStyle("StateObjectElement");
             targetElement.transform.position = new Vector3(StateData.Position.x, StateData.Position.y, 0.0f);
-            targetElement.style.width = 100;
-            targetElement.style.height = 100;
 
             var topLayerBox = new Box();
-            topLayerBox.style.height = 20;
-            topLayerBox.style.alignItems = Align.Center;
+            stateMachineData.SetStyle("StateObjectElementTopLayerBox", topLayerBox.style);
 
             targetElement.Add(topLayerBox);
 

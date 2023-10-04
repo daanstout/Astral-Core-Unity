@@ -17,10 +17,7 @@ namespace Astral.Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
-            targetElement.style.width = 600;
-            targetElement.style.height = 400;
-            targetElement.style.marginTop = 10;
-            targetElement.style.marginLeft = 10;
+            ApplyStyle("StateMachineStateInfoDrawer");
 
             targetElement.Add(stateMachineInfoDrawerTop.Rebuild());
 

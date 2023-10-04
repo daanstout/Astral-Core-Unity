@@ -66,5 +66,9 @@ namespace Astral.Core.Editor.Elements {
         protected void UnregisterCallback<TEventType>(EventCallback<TEventType> callback) where TEventType : EventBase<TEventType>, new() {
             targetElement.UnregisterCallback(callback);
         }
+
+        protected void ApplyStyle(string styleName) {
+            stateMachineData.SetStyle(styleName, targetElement.style);
+        }
     }
 }

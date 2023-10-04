@@ -7,8 +7,7 @@ namespace Astral.Core.Editor.Elements {
         public override VisualElement Rebuild() {
             var targetElement = base.Rebuild();
 
-            targetElement.style.width = 200;
-            targetElement.style.height = 500;
+            ApplyStyle("HierarchyView");
 
             return targetElement;
         }
